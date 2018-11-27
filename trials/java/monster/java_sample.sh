@@ -44,8 +44,8 @@ fi
 echo Compiling and running the Java sample.
 
 # Compile and execute the sample.
-javac -classpath ${sampledir}/../java:${sampledir} SampleBinary.java
-java -classpath ${sampledir}/../java:${sampledir} SampleBinary
+javac -classpath ${sampledir} SampleBinary.java
+java -classpath ${sampledir} SampleBinary
 
 # Cleanup temporary files.
 # rm -rf MyGame/
