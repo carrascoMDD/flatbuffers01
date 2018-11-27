@@ -18,19 +18,19 @@ public final class DmesgLogLineFacade {
     }
 
     public String getSource() {
-        return this.dmesgLogLine.source().toString();
+        return this.dmesgLogLine.source();
     }
 
     public String getLevel() {
-        return this.dmesgLogLine.level().toString();
+        return this.dmesgLogLine.level();
     }
 
     public String getTimestamp() {
-        return this.dmesgLogLine.timestamp().toString();
+        return this.dmesgLogLine.timestamp();
     }
 
     public String getMessage() {
-        return this.dmesgLogLine.message().toString();
+        return this.dmesgLogLine.message();
     }
 
 }

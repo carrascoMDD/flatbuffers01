@@ -27,7 +27,7 @@ public final class DmesgLogLineCached extends DmesgLogLineBean {
     @Override
     public String getSource() {
         if( (this.cachedFlags & MASK_Source) == 0) {
-            this.source = this.dmesgLogLine.source().toString();
+            this.source = this.dmesgLogLine.source();
             this.cachedFlags = (short) ( this.cachedFlags | MASK_Source);
         }
         return this.source;
@@ -43,7 +43,7 @@ public final class DmesgLogLineCached extends DmesgLogLineBean {
     @Override
     public String getLevel() {
         if( (this.cachedFlags & MASK_Level) == 0) {
-            this.level = this.dmesgLogLine.level().toString();
+            this.level = this.dmesgLogLine.level();
             this.cachedFlags = (short) ( this.cachedFlags | MASK_Level);
         }
         return this.level;
@@ -58,7 +58,7 @@ public final class DmesgLogLineCached extends DmesgLogLineBean {
     @Override
     public String getTimestamp() {
         if( (this.cachedFlags & MASK_Timestamp) == 0) {
-            this.timestamp = this.dmesgLogLine.timestamp().toString();
+            this.timestamp = this.dmesgLogLine.timestamp();
             this.cachedFlags = (short) ( this.cachedFlags | MASK_Timestamp);
         }
         return this.timestamp;
@@ -75,7 +75,7 @@ public final class DmesgLogLineCached extends DmesgLogLineBean {
     @Override
     public String getMessage() {
         if( (this.cachedFlags & MASK_Message) == 0) {
-            this.message = this.dmesgLogLine.message().toString();
+            this.message = this.dmesgLogLine.message();
             this.cachedFlags = (short) ( this.cachedFlags | MASK_Message);
         }
         return this.message;
