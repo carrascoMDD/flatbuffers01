@@ -1,4 +1,4 @@
-// Example IDL file for our monster's schema.
+// FAILS WHEN ACCESING elements of lines[] and lineTypes[]
 
 // Sample instances in plain text as produced by the nginx proxy
 // SpringNut.access.log.43 192.168.69.129 - - [15/Apr/2018:13:01:47 +0200] "GET / HTTP/1.1" 200 2292 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36"
@@ -31,15 +31,21 @@ table DmesgLogLine {
 }
 
 
-table CoupleModelsLine {
-    line:PolymorphLine;
+table DmesgLogLine {
+    source:string;
+    level:string;
+    timestamp:string;
+    message:string;
 }
 
 
-union PolymorphLine { NginxLogLine, DmesgLogLine }
+union CoupleModelsLine { NginxLogLine, DmesgLogLine }
 
 table CoupleModels {
   lines:[CoupleModelsLine];
 }
 
 root_type CoupleModels;
+
+
+
