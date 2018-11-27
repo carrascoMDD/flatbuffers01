@@ -2,7 +2,7 @@ package org.modeldd.flatbufferssamples.couplemodels;
 
 import java.util.Objects;
 
-public class DmesglogLineBean {
+public class DmesgLogLineBean {
     /*
     source @0 :Text;
     level @1 :Text;
@@ -49,8 +49,8 @@ public class DmesglogLineBean {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof DmesglogLineBean)) return false;
-        DmesglogLineBean that = (DmesglogLineBean) o;
+        if (!(o instanceof DmesgLogLineBean)) return false;
+        DmesgLogLineBean that = (DmesgLogLineBean) o;
         return Objects.equals(getSource(), that.getSource()) &&
                 Objects.equals(getLevel(), that.getLevel()) &&
                 Objects.equals(getTimestamp(), that.getTimestamp()) &&

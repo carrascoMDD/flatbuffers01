@@ -1,10 +1,9 @@
 package org.modeldd.flatbufferssamples.couplemodels;
 
-import java.nio.ByteBuffer;
-
 import com.google.flatbuffers.FlatBufferBuilder;
-
 import org.modeldd.flatbufferssamples.couplemodels.generated.*;
+
+import java.nio.ByteBuffer;
 
 
 /* schema
@@ -41,11 +40,11 @@ kern  :notice: [dom nov 25 18:10:20 2018] Linux version 3.13.0-162-generic (buil
 */
 
 
-class MainCoupleModels {
+class MainCoupleModelsCached {
     // Example how to use FlatBuffers to create and read binary buffers.
     public static void main(String[] args) {
 
-        System.out.println( "Running " + MainCoupleModels.class.getCanonicalName());
+        System.out.println( "Running " + MainCoupleModelsCached.class.getCanonicalName());
 
         System.out.println( "Creating objects");
 
@@ -136,28 +135,52 @@ class MainCoupleModels {
             switch( aLineType) {
                 case PolymorphLine.DmesgLogLine:
                     DmesgLogLine aDmesgLogLine = ( DmesgLogLine) aCoupleModelsLine.line( new DmesgLogLine());
+                    DmesgLogLineCached aDmesgLogLineCached = new DmesgLogLineCached( aDmesgLogLine);
                     System.out.println( "\n");
                     System.out.println( "DmesgLogLine=" + (aLineIdx + 1) + " of NumLines=" + aNumLines);
-                    System.out.println("source=" + aDmesgLogLine.source());
-                    System.out.println("level=" + aDmesgLogLine.level());
-                    System.out.println("timestamp=" + aDmesgLogLine.timestamp());
-                    System.out.println("message=" + aDmesgLogLine.message());
+                    System.out.println("source=" + aDmesgLogLineCached.getSource());
+                    System.out.println("level=" + aDmesgLogLineCached.getLevel());
+                    System.out.println("timestamp=" + aDmesgLogLineCached.getTimestamp());
+                    System.out.println("message=" + aDmesgLogLineCached.getMessage());
+
+                    System.out.println( "\nAgain");
+
+                    System.out.println("source=" + aDmesgLogLineCached.getSource());
+                    System.out.println("level=" + aDmesgLogLineCached.getLevel());
+                    System.out.println("timestamp=" + aDmesgLogLineCached.getTimestamp());
+                    System.out.println("message=" + aDmesgLogLineCached.getMessage());
+
                     break;
 
                 case PolymorphLine.NginxLogLine:
                     NginxLogLine anNginxLogLine = ( NginxLogLine) aCoupleModelsLine.line( new NginxLogLine());
+                    NginxLogLineCached anNginxLogLineCached = new NginxLogLineCached( anNginxLogLine);
                     System.out.println( "\n");
                     System.out.println( "NginxLogLine=" + (aLineIdx + 1) + " of NumLines=" + aNumLines);
-                    System.out.println("host=" + anNginxLogLine.host());
-                    System.out.println("clientIP=" + anNginxLogLine.clientIP());
-                    System.out.println("timestamp=" + anNginxLogLine.timestamp());
-                    System.out.println("method=" + anNginxLogLine.method());
-                    System.out.println("url=" + anNginxLogLine.url());
-                    System.out.println("proto=" + anNginxLogLine.proto());
-                    System.out.println("httpStatus=" + anNginxLogLine.httpStatus());
-                    System.out.println("responseLen=" + anNginxLogLine.responseLen());
-                    System.out.println("referer=" + anNginxLogLine.referer());
-                    System.out.println("agent=" + anNginxLogLine.agent());
+                    System.out.println("host=" + anNginxLogLineCached.getHost());
+                    System.out.println("clientIP=" + anNginxLogLineCached.getClientIP());
+                    System.out.println("timestamp=" + anNginxLogLineCached.getTimestamp());
+                    System.out.println("method=" + anNginxLogLineCached.getMethod());
+                    System.out.println("url=" + anNginxLogLineCached.getUrl());
+                    System.out.println("proto=" + anNginxLogLineCached.getProto());
+                    System.out.println("httpStatus=" + anNginxLogLineCached.getHttpStatus());
+                    System.out.println("responseLen=" + anNginxLogLineCached.getResponseLen());
+                    System.out.println("referer=" + anNginxLogLineCached.getReferer());
+                    System.out.println("agent=" + anNginxLogLineCached.getAgent());
+
+                    System.out.println( "\nAgain");
+
+                    System.out.println("host=" + anNginxLogLineCached.getHost());
+                    System.out.println("clientIP=" + anNginxLogLineCached.getClientIP());
+                    System.out.println("timestamp=" + anNginxLogLineCached.getTimestamp());
+                    System.out.println("method=" + anNginxLogLineCached.getMethod());
+                    System.out.println("url=" + anNginxLogLineCached.getUrl());
+                    System.out.println("proto=" + anNginxLogLineCached.getProto());
+                    System.out.println("httpStatus=" + anNginxLogLineCached.getHttpStatus());
+                    System.out.println("responseLen=" + anNginxLogLineCached.getResponseLen());
+                    System.out.println("referer=" + anNginxLogLineCached.getReferer());
+                    System.out.println("agent=" + anNginxLogLineCached.getAgent());
+
                     break;
 
                 default:

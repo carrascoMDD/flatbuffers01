@@ -2,7 +2,7 @@ package org.modeldd.flatbufferssamples.couplemodels;
 
 import org.modeldd.flatbufferssamples.couplemodels.generated.NginxLogLine;
 
-public final class NginxlogLineCapnpFacade {
+public final class NginxLogLineFacade {
     /*
     host @0 :Text;
     clientIP @1 :Text;
@@ -19,7 +19,7 @@ public final class NginxlogLineCapnpFacade {
     private NginxLogLine nginxLogLine;
 
 
-    public NginxlogLineCapnpFacade( NginxLogLine theNginxLogLine) {
+    public NginxLogLineFacade(NginxLogLine theNginxLogLine) {
         this.nginxLogLine = theNginxLogLine;
     }
 

@@ -1,8 +1,8 @@
-package org.modeldd.flatbufferssamples.nginxlog;
+package org.modeldd.flatbufferssamples.couplemodels;
 
-import org.modeldd.flatbufferssamples.nginxlog.generated.NginxLogLine;
+import org.modeldd.flatbufferssamples.couplemodels.generated.NginxLogLine;
 
-public final class NginxlogLineCapnpCached extends NginxlogLineBean {
+public final class NginxLogLineCached extends NginxlogLineBean {
     /*
     host @0 :Text;
     clientIP @1 :Text;
@@ -31,7 +31,7 @@ public final class NginxlogLineCapnpCached extends NginxlogLineBean {
 
     private short cachedFlags = (short) 0;
 
-    public NginxlogLineCapnpCached( NginxLogLine theNginxLogLineCapnpReader) {
+    public NginxLogLineCached(NginxLogLine theNginxLogLineCapnpReader) {
         this.nginxLogLine = theNginxLogLineCapnpReader;
     }
 

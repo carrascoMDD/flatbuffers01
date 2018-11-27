@@ -2,7 +2,7 @@ package org.modeldd.flatbufferssamples.nginxlog;
 
 import java.util.Objects;
 
-public class NginxlogLineBean {
+public class NginxLogLineBean {
     /*
     host @0 :Text;
     clientIP @1 :Text;
@@ -110,8 +110,8 @@ public class NginxlogLineBean {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof NginxlogLineBean)) return false;
-        NginxlogLineBean that = (NginxlogLineBean) o;
+        if (!(o instanceof NginxLogLineBean)) return false;
+        NginxLogLineBean that = (NginxLogLineBean) o;
         return getHttpStatus() == that.getHttpStatus() &&
                 getResponseLen() == that.getResponseLen() &&
                 Objects.equals(getHost(), that.getHost()) &&

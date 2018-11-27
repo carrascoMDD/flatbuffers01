@@ -2,7 +2,7 @@ package org.modeldd.flatbufferssamples.couplemodels;
 
 import org.modeldd.flatbufferssamples.couplemodels.generated.DmesgLogLine;
 
-public final class DmesglogLineCapnpFacade {
+public final class DmesgLogLineFacade {
     /*
     source @0 :Text;
     level @1 :Text;
@@ -13,7 +13,7 @@ public final class DmesglogLineCapnpFacade {
     private DmesgLogLine dmesgLogLine;
 
 
-    public DmesglogLineCapnpFacade(DmesgLogLine theNginxLogLineCapnpReader) {
+    public DmesgLogLineFacade(DmesgLogLine theNginxLogLineCapnpReader) {
         this.dmesgLogLine = theNginxLogLineCapnpReader;
     }
 

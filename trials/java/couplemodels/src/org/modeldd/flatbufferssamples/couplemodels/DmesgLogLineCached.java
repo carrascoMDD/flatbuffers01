@@ -2,7 +2,7 @@ package org.modeldd.flatbufferssamples.couplemodels;
 
 import org.modeldd.flatbufferssamples.couplemodels.generated.DmesgLogLine;
 
-public final class DmesglogLineCapnpCached extends DmesglogLineBean {
+public final class DmesgLogLineCached extends DmesgLogLineBean {
     /*
     source @0 :Text;
     level @1 :Text;
@@ -20,7 +20,7 @@ public final class DmesglogLineCapnpCached extends DmesglogLineBean {
 
     private int cachedFlags = (short) 0;
 
-    public DmesglogLineCapnpCached(DmesgLogLine theDmesgLogLineCapnpReader) {
+    public DmesgLogLineCached(DmesgLogLine theDmesgLogLineCapnpReader) {
         this.dmesgLogLine = theDmesgLogLineCapnpReader;
     }
 

@@ -1,11 +1,10 @@
 package org.modeldd.flatbufferssamples.nginxlog;
 
-import java.nio.ByteBuffer;
-
 import com.google.flatbuffers.FlatBufferBuilder;
-
 import org.modeldd.flatbufferssamples.nginxlog.generated.NginxLog;
 import org.modeldd.flatbufferssamples.nginxlog.generated.NginxLogLine;
+
+import java.nio.ByteBuffer;
 
 
 /* schema
@@ -28,11 +27,11 @@ nginx-workOflow-83.log.1 192.168.99.1 - - [06/Jun/2018:00:02:44 +0200] "GET /bui
 */
 
 
-class MainNginxLog {
+class MainNginxLogCached {
     // Example how to use FlatBuffers to create and read binary buffers.
     public static void main(String[] args) {
 
-        System.out.println( "Running " + MainNginxLog.class.getCanonicalName());
+        System.out.println( "Running " + MainNginxLogCached.class.getCanonicalName());
 
         System.out.println( "Creating objects");
 
@@ -97,18 +96,34 @@ class MainNginxLog {
 
         for( int aLineIdx=0; aLineIdx < aNumLines; aLineIdx++) {
             NginxLogLine anNginxLogLine = anNginxLog.lines( aLineIdx);
+            
+            NginxLogLineCached anNginxlogLineCached = new NginxLogLineCached( anNginxLogLine);
+            
             System.out.println( "\n");
-            System.out.println( "Line=" + (aLineIdx + 1)  + " of NumLines=" + aNumLines);
-            System.out.println("host=" + anNginxLogLine.host());
-            System.out.println("clientIP=" + anNginxLogLine.clientIP());
-            System.out.println("timestamp=" + anNginxLogLine.timestamp());
-            System.out.println("method=" + anNginxLogLine.method());
-            System.out.println("url=" + anNginxLogLine.url());
-            System.out.println("proto=" + anNginxLogLine.proto());
-            System.out.println("httpStatus=" + anNginxLogLine.httpStatus());
-            System.out.println("responseLen=" + anNginxLogLine.responseLen());
-            System.out.println("referer=" + anNginxLogLine.referer());
-            System.out.println("agent=" + anNginxLogLine.agent());
+            System.out.println( "Line=" + (aLineIdx + 1) + " of NumLines=" + aNumLines);
+            System.out.println("host=" + anNginxlogLineCached.getHost());
+            System.out.println("clientIP=" + anNginxlogLineCached.getClientIP());
+            System.out.println("timestamp=" + anNginxlogLineCached.getTimestamp());
+            System.out.println("method=" + anNginxlogLineCached.getMethod());
+            System.out.println("url=" + anNginxlogLineCached.getUrl());
+            System.out.println("proto=" + anNginxlogLineCached.getProto());
+            System.out.println("httpStatus=" + anNginxlogLineCached.getHttpStatus());
+            System.out.println("responseLen=" + anNginxlogLineCached.getResponseLen());
+            System.out.println("referer=" + anNginxlogLineCached.getReferer());
+            System.out.println("agent=" + anNginxlogLineCached.getAgent());
+
+            System.out.println( "\nAgain");
+
+            System.out.println("host=" + anNginxlogLineCached.getHost());
+            System.out.println("clientIP=" + anNginxlogLineCached.getClientIP());
+            System.out.println("timestamp=" + anNginxlogLineCached.getTimestamp());
+            System.out.println("method=" + anNginxlogLineCached.getMethod());
+            System.out.println("url=" + anNginxlogLineCached.getUrl());
+            System.out.println("proto=" + anNginxlogLineCached.getProto());
+            System.out.println("httpStatus=" + anNginxlogLineCached.getHttpStatus());
+            System.out.println("responseLen=" + anNginxlogLineCached.getResponseLen());
+            System.out.println("referer=" + anNginxlogLineCached.getReferer());
+            System.out.println("agent=" + anNginxlogLineCached.getAgent());
         }
         System.out.println( "\n");
 
