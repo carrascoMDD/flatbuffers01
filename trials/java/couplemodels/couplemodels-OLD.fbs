@@ -1,0 +1,45 @@
+// Example IDL file for our monster's schema.
+
+// Sample instances in plain text as produced by the nginx proxy
+// SpringNut.access.log.43 192.168.69.129 - - [15/Apr/2018:13:01:47 +0200] "GET / HTTP/1.1" 200 2292 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36"
+// nginx-workOflow-83.log.1 192.168.99.1 - - [06/Jun/2018:00:02:44 +0200] "GET /build/main.js HTTP/1.1" 200 287069 "http://workoflow.org/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36"
+
+namespace org.modeldd.flatbufferssamples.couplemodels.generated;
+
+table NginxLogLine {
+    host:string;
+    clientIP:string;
+    timestamp:string;
+    method:string;
+    url:string;
+    proto:string;
+    httpStatus:short;
+    responseLen:int;
+    referer:string;
+    agent:string;
+}
+
+// Sample instances in plain text as produced by the nginx proxy
+// kern  :info  : [dom nov 25 18:10:20 2018] Initializing cgroup subsys cpuacct
+// kern  :notice: [dom nov 25 18:10:20 2018] Linux version 3.13.0-162-generic (buildd@lgw01-amd64-035) (gcc version 4.8.4 (Ubuntu 4.8.4-2ubuntu1~14.04.4) ) #212-Ubuntu SMP Mon Oct 29 12:08:50 UTC 2018 (Ubuntu 3.13.0-162.212-generic 3.13.11-ckt39)
+
+table DmesgLogLine {
+    source:string;
+    level:string;
+    timestamp:string;
+    message:string;
+}
+
+
+table CoupleModelsLine {
+    line:PolymorphLine;
+}
+
+
+union PolymorphLine { NginxLogLine, DmesgLogLine }
+
+table CoupleModels {
+  lines:[CoupleModelsLine];
+}
+
+root_type CoupleModels;
